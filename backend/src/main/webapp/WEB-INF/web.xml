@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <filter>
+        <filter-name>ObjectifyFilter</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+    <servlet-name>SystemServiceServlet</servlet-name>
+    <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+    <init-param>
+      <param-name>services</param-name>
+      <param-value>ctprojects.push_notification_prototype.RegistrationEndpoint,
+          ctprojects.push_notification_prototype.MessagingEndpoint
+      </param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SystemServiceServlet</servlet-name>
+    <url-pattern>/_ah/spi/*</url-pattern>
+  </servlet-mapping>
+<!-- 
+  <servlet>
+    <servlet-name>PushNotificationWorkerServlet</servlet-name>
+    <servlet-class>com.example.christophe.myapplication.backend.PushNotificationWorkerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PushNotificationWorkerServlet</servlet-name>
+    <url-pattern>/_ah/start</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>PushPreProcessingServlet</servlet-name>
+    <servlet-class>com.example.christophe.myapplication.backend.PushPreProcessingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PushPreProcessingServlet</servlet-name>
+    <url-pattern>/admin/push/preprocessing</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>PushFeedbackProcessingServlet</servlet-name>
+    <servlet-class>com.example.christophe.myapplication.backend.PushFeedbackProcessingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PushFeedbackProcessingServlet</servlet-name>
+    <url-pattern>/admin/push/feedbackservice/process</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DeviceCleanupServlet</servlet-name>
+    <servlet-class>com.example.christophe.myapplication.backend.DeviceCleanupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeviceCleanupServlet</servlet-name>
+    <url-pattern>/admin/push/device/cleanup</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>NotificationCleanupServlet</servlet-name>
+    <servlet-class>com.google.cloud.solutions.mobilepushnotification.NotificationCleanupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NotificationCleanupServlet</servlet-name>
+    <url-pattern>/admin/push/notifications/cleanup</url-pattern>
+  </servlet-mapping> -->
+
+</web-app>
