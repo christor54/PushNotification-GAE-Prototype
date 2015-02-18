@@ -16,7 +16,8 @@
     <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
     <init-param>
       <param-name>services</param-name>
-      <param-value>ctprojects.push_notification_prototype.RegistrationEndpoint,
+      <param-value>
+          ctprojects.push_notification_prototype.DeviceRegistrationEndpoint,
           ctprojects.push_notification_prototype.MessagingEndpoint
       </param-value>
     </init-param>
