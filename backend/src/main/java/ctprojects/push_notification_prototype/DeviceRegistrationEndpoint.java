@@ -40,7 +40,7 @@ public class DeviceRegistrationEndpoint {
     public DeviceRegistration getDeviceRegistration(@Named("id") Long id) {
         // TODO: Implement this function
         logger.info("Calling getDeviceRegistration method");
-        ofy().load().entity(DeviceRegistration.class).safe();
+        ofy().load().type(DeviceRegistration.class).id(id).safe();
         return null;
     }
 
@@ -50,7 +50,8 @@ public class DeviceRegistrationEndpoint {
      * @param regId The string of the device to be registered
      * @return The object to be added.
      */
-    @ApiMethod(name = "register")
+    @ApiMethod(name = "register",
+            httpMethod = ApiMethod.HttpMethod.POST)
     public void registerDevice(@Named("regId") String regId) {
         // TODO: Implement this function
         if (findRecord(regId) != null) {

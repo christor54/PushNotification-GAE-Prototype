@@ -12,6 +12,9 @@ public class OfyService {
 
     static {
         ObjectifyService.register(DeviceRegistration.class);
+        ObjectifyService.register(MyBean.class);
+        ObjectifyService.register(RegistrationRecord.class);
+
     }
 
     public static Objectify ofy() {

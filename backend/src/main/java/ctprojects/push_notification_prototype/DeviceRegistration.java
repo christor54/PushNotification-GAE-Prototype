@@ -27,19 +27,21 @@ import lombok.Setter;
 */
 @Entity
 public class DeviceRegistration {
-  /*
-   * Push notification device token.
-   */
-  @Id @Getter
-  Long id;
+      /*
+       * Push notification device token.
+       */
+    @Id @Getter
+    Long id;
 
-  @Getter @Setter
-  private String regId;
+    @Getter @Setter
+    private String regId;
 
-  /*
-   * Timestamp when this device registered last time with the backend.
-   */
-  @Getter
-  private Date timestamp;
+      /*
+       * Timestamp when this device registered last time with the backend.
+       */
+    @Getter
+    private Date timestamp;
 
+    public DeviceRegistration() {
+    }
 }
